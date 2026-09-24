@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CCS Documentation Portfolio — Nathan B. Smith</title>
+<meta name="description" content="Documentation samples for a Common Control System (CCS) software technical writing role: SUM, How-To Guides, training, installation guide with DITA source, and a sprint status report. Illustrative content built from public sources only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@600&display=swap">
+<style>
+:root{
+  --ground:#F4F7F6; --surface:#FFFFFF; --ink:#18212B; --muted:#56636E; --line:#D3DCDA;
+  --accent:#0D6B6B; --accent-dk:#0A3F44; --accent-soft:#E0EFEE; --amber:#9A5B0F; --amber-soft:#FBEFDC;
+  --serif:"IBM Plex Serif",Georgia,serif; --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root{
+  color-scheme:dark; --ground:#10171C; --surface:#172128; --ink:#E4ECEA; --muted:#9AA9B0; --line:#2A3740;
+  --accent:#4FB8B3; --accent-dk:#8FD3CF; --accent-soft:#16312F; --amber:#E2A652; --amber-soft:#33260F;}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 var(--sans)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+a{color:var(--accent)}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+header{background:var(--accent-dk);color:#fff;padding:40px 0 32px}
+@media (prefers-color-scheme:dark){header{background:#0B2A2E}}
+.eyebrow{font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#8FD3CF}
+h1{font:600 clamp(30px,5vw,44px)/1.12 var(--serif);margin:.25em 0 .3em;text-wrap:balance}
+.lede{max-width:64ch;color:#D5E6E4;margin:0}
+.hlinks{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:18px;font-size:15px}
+.hlinks a{color:#fff;text-decoration-color:rgba(255,255,255,.4);text-underline-offset:3px}
+.banner{margin:24px 0 0;background:var(--amber-soft);border:1px solid var(--amber);border-radius:6px;padding:14px 16px;font-size:15px}
+.banner b{color:var(--amber)}
+nav.toc{display:flex;gap:6px;flex-wrap:wrap;margin:22px 0 0;font-size:14px}
+nav.toc a{text-decoration:none;color:var(--muted);border:1px solid var(--line);background:var(--surface);padding:4px 10px;border-radius:4px}
+nav.toc a:hover{color:var(--accent);border-color:var(--accent)}
+section{padding:36px 0 4px}
+h2{font:600 24px/1.25 var(--serif);margin:0 0 6px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 18px;max-width:70ch}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font:600 12px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--ground)}
+tr:last-child td{border-bottom:0}
+td .id{font:600 13px var(--mono);color:var(--accent)}
+ol.path{list-style:none;counter-reset:step;padding:0;margin:0;display:grid;gap:8px}
+ol.path li{counter-increment:step;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+ol.path li::before{content:counter(step);font:600 15px var(--mono);color:#fff;background:var(--accent);width:28px;height:28px;border-radius:50%;display:grid;place-items:center}
+@media (prefers-color-scheme:dark){ol.path li::before{color:#0B1A1A}}
+ol.path b{display:block}
+ol.path span{color:var(--muted);font-size:15px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.card .id{font:600 12px var(--mono);letter-spacing:.06em;color:var(--accent)}
+.card h3{font:600 18px/1.3 var(--sans);margin:0}
+.card p{margin:0;font-size:15px}
+.card ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted)}
+.card .links{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;padding-top:6px}
+.card .links a{font:500 13px var(--mono);text-decoration:none;border:1px solid var(--accent);color:var(--accent);padding:3px 9px;border-radius:4px}
+.card .links a:hover{background:var(--accent-soft)}
+.card.feature{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px}
+figure .scroll{overflow-x:auto}
+figure svg{display:block;width:100%;min-width:560px;height:auto;color:var(--ink);font-family:var(--sans)}
+figcaption{color:var(--muted);font-size:14px;margin-top:10px;max-width:72ch}
+.box{fill:var(--ground);stroke:var(--line)}
+.hi{fill:var(--accent-soft);stroke:var(--accent)}
+.ad{fill:var(--amber-soft);stroke:var(--amber);stroke-dasharray:5 4}
+.t{font-size:13px;fill:var(--ink)} .tb{font-weight:600} .ts{font-size:11.5px;fill:var(--muted)} .ta{fill:var(--amber);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.pane{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.pane h3{margin:0 0 6px;font-size:16px}
+.pane ul{margin:0;padding-left:18px;font-size:15px}
+code{font:14px var(--mono);background:var(--accent-soft);padding:1px 5px;border-radius:3px}
+footer{margin-top:44px;border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:14px}
+footer p{max-width:80ch}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Technical writing samples · Common Control System</div>
+    <h1>CCS Documentation Portfolio</h1>
+    <p class="lede">A documentation set written the way a Software Support Activity would deliver it: a user manual, How-To Guides, training, an installation guide with its DITA source, and a sprint status report. Prepared by Nathan B. Smith for the SAIC Senior Software Technical Writer interview (CCS, NIWC Pacific).</p>
+    <div class="hlinks">
+      <a href="https://nbsmith-dev.github.io/writing-samples/">Main writing-samples portfolio</a>
+      <a href="https://www.linkedin.com/in/nathanbsmith92163">LinkedIn</a>
+      <a href="https://github.com/nbsmith-dev/ccs-documentation-portfolio">Source repository</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="banner" role="note">
+    <b>Illustrative samples.</b> Every screen, label, value, procedure, ticket number, and name in these documents is invented for demonstration. They are built only from publicly available press and web content, listed below. No CUI, classified, proprietary, or export-controlled information is contained in these documents. Provided as technical writing samples — Nathan B. Smith.
+  </div>
+
+  <nav class="toc" aria-label="Sections">
+    <a href="#sources">Sources</a><a href="#walkthrough">Walkthrough</a><a href="#duties">Job duties map</a><a href="#samples">Samples</a><a href="#system">The system</a><a href="#dita">DITA single source</a>
+  </nav>
+
+  <section id="sources">
+    <h2>Sources and references</h2>
+    <p class="sub">Everything here rests on these public sources and published standards. Each is listed with what it contributed.</p>
+    <div class="tbl"><table>
+      <tr><th>Source</th><th>Purpose in this portfolio</th></tr>
+      <tr><td><a href="https://www.navair.navy.mil/product/CCS">NAVAIR — Common Control System</a></td><td>Mission statement, open architecture, and platforms (MQ-25, MQ-4C)</td></tr>
+      <tr><td><a href="https://www.navair.navy.mil/node/23331">NAVAIR — CCS completes first live demonstration</a></td><td>Evidence that CCS spans domains (surrogate LDUUV); program office PMA-281</td></tr>
+      <tr><td><a href="https://www.c4isrnet.com/unmanned/uas/2016/12/13/navy-moves-closer-to-common-control-system/">C4ISRNET — Navy moves closer to common control system</a></td><td>The three core functions: vehicle management, mission planning, mission management</td></tr>
+      <tr><td><a href="https://news.usni.org/2020/09/10/common-standards-software-key-to-navys-future-unmanned-systems">USNI News — Common standards, software key to Navy's future unmanned systems</a></td><td>Why a common control system matters to operators and control stations</td></tr>
+      <tr><td><a href="https://www.forwardslope.com/news/fsi-awarded-naval-information-warfare-center-pacific-contract-provide-software-support">Forward Slope — NIWC Pacific CCS Software Support Activity award</a></td><td>NIWC Pacific's role sustaining and releasing CCS software</td></tr>
+      <tr><td><a href="https://aviationweek.com/defense/sensors-electronic-warfare/us-navy-remove-retire-remaining-mq-8c-fleet">Aviation Week</a> and <a href="https://www.flightglobal.com/helicopters/us-navys-mq-8c-fire-scouts-fly-into-retirement-just-two-years-after-entering-operational-service/158500.article">FlightGlobal</a> — MQ-8C retirement</td><td>Corrects older sources that list Fire Scout as a future CCS platform</td></tr>
+      <tr><td>SAIC public job posting, Senior Software Technical Writer (Job ID 2616178)</td><td>The duties these samples are organized around</td></tr>
+      <tr><td>MIL-STD-498, DI-IPSC-81443A Software User Manual</td><td>Section structure of the SUM (CCS-02, CCS-03)</td></tr>
+      <tr><td>OASIS DITA 1.3 and the <a href="https://www.dita-ot.org/">DITA Open Toolkit</a></td><td>Topic types, bookmap, keys, reuse, filtering; build validation (CCS-07)</td></tr>
+      <tr><td>DoD Instruction 5200.48, Controlled Unclassified Information</td><td>Marking conventions shown in the sample documents</td></tr>
+      <tr><td>NAVEDTRA 130 series, Navy curriculum development</td><td>Lesson structure and learning-objective format (CCS-05)</td></tr>
+    </table></div>
+  </section>
+
+  <section id="walkthrough">
+    <h2>Suggested walkthrough</h2>
+    <p class="sub">About 20 minutes, in this order: from understanding the system, to the documents operators use, to how the set is built and reported.</p>
+    <ol class="path">
+      <li><div><b><a href="samples/CCS-01_CCS_Overview_for_Technical_Writers.pdf">CCS-01 · CCS overview for technical writers</a></b><span>What CCS is, and why its architecture is also the documentation strategy.</span></div></li>
+      <li><div><b><a href="samples/CCS-02_SUM_DITA_Outline.pdf">CCS-02 · SUM outline in DITA</a></b><span>How the user manual maps onto MIL-STD-498 sections and DITA topic types.</span></div></li>
+      <li><div><b><a href="samples/CCS-03_Software_User_Manual.pdf">CCS-03 · Software User Manual</a></b><span>The formal deliverable: front matter, procedures, emergencies, messages, back matter.</span></div></li>
+      <li><div><b><a href="samples/CCS-04_How-To_Guides_Plan.pdf">CCS-04 · How-To Guides</a></b><span>Task cards for the station, reused from the SUM's procedures.</span></div></li>
+      <li><div><b><a href="samples/CCS-05_Training_Lesson_2.1_Build_and_Validate_a_Route.pdf">CCS-05 · Training lesson</a></b><span>Objectives, job sheet, knowledge check, and assessment for one operator task.</span></div></li>
+      <li><div><b><a href="samples/CCS-06_Site_Installation_and_Configuration_Guide.pdf">CCS-06 · Installation and configuration guide</a> and <a href="https://github.com/nbsmith-dev/ccs-documentation-portfolio/tree/main/samples/CCS-07_Installation_Guide_DITA_Source">CCS-07 · its DITA source</a></b><span>Media verification, install, configure, verify, record — and the commented source that builds it.</span></div></li>
+      <li><div><b><a href="samples/CCS-08_Sprint_Documentation_Status_Report.pdf">CCS-08 · Sprint status report</a></b><span>What goes to the program after each sprint review: burndown, deliverables, Jira, requirements, risks.</span></div></li>
+    </ol>
+  </section>
+
+  <section id="duties">
+    <h2>Job duties map</h2>
+    <p class="sub">Each duty in the posting, and the sample that shows it.</p>
+    <div class="tbl"><table>
+      <tr><th style="width:38%">Duty in the posting</th><th>Where it is shown</th></tr>
+      <tr><td>Maintain training documentation, How-To Guides, and System User Manuals</td><td><span class="id">CCS-03</span> SUM · <span class="id">CCS-04</span> How-To Guides · <span class="id">CCS-05</span> training lesson</td></tr>
+      <tr><td>Write and edit manuals and instructions on installation, operation, and maintenance of software systems</td><td><span class="id">CCS-06</span> installation and configuration guide · <span class="id">CCS-03</span> Sections 4–5</td></tr>
+      <tr><td>Configuration management of documents and distributed media</td><td><span class="id">CCS-06</span> media verification and install record · <span class="id">CCS-08</span> media packages built and logged · record-of-changes pages in every formal document</td></tr>
+      <tr><td>Requirements management and reporting in Jira and Confluence</td><td><span class="id">CCS-08</span> requirements database updates, traceability, Jira filter · <span class="id">CCS-04</span> Jira-driven guide lifecycle</td></tr>
+      <tr><td>Understanding of software development processes</td><td><span class="id">CCS-01</span> release loop · <span class="id">CCS-08</span> sprint cadence, velocity, carry-over</td></tr>
+      <tr><td>Initiative and ownership of documentation quality</td><td><span class="id">CCS-02</span> and <span class="id">CCS-07</span> single-source DITA design, validated with DITA-OT in strict mode</td></tr>
+      <tr><td>Classified material handling (discussed in interview, not documented here)</td><td><span class="id">CCS-06</span> shows the handling steps for release media using illustrative content only</td></tr>
+    </table></div>
+  </section>
+
+  <section id="samples">
+    <h2>Samples</h2>
+    <p class="sub">PDFs open in the browser. Decks are also available as PowerPoint files.</p>
+    <div class="cards">
+      <article class="card">
+        <div class="id">CCS-01 · 10 slides</div>
+        <h3>CCS overview for technical writers</h3>
+        <p>The system in plain terms, and what each architecture layer means for how content is written and reused.</p>
+        <ul><li>Before/after: one control stack per vehicle vs. one common core</li><li>Release loop and where writers sit in it</li></ul>
+        <div class="links"><a href="samples/CCS-01_CCS_Overview_for_Technical_Writers.pdf">PDF</a><a href="samples/CCS-01_CCS_Overview_for_Technical_Writers.pptx">PPTX</a></div>
+      </article>
+      <article class="card">
+        <div class="id">CCS-02 · 11 slides</div>
+        <h3>Software User Manual outline in DITA</h3>
+        <p>MIL-STD-498 SUM sections mapped to a bookmap, topic types, filtering attributes, and five builds from one source.</p>
+        <ul><li>Topic types with plain-language glosses</li><li>Open questions for the program</li></ul>
+        <div class="links"><a href="samples/CCS-02_SUM_DITA_Outline.pdf">PDF</a><a href="samples/CCS-02_SUM_DITA_Outline.pptx">PPTX</a></div>
+      </article>
+      <article class="card feature">
+        <div class="id">CCS-03 · 22 pages</div>
+        <h3>Software User Manual</h3>
+        <p>A formal deliverable with representative content in every section, platform-tagged steps, and a safety summary built from the same warnings used in the procedures.</p>
+        <ul><li>Approval, record of changes, safety summary, contents, preface</li><li>Procedures, lost link and failover, messages, quick reference</li><li>Platform supplements, worked mission, production notes, index</li></ul>
+        <div class="links"><a href="samples/CCS-03_Software_User_Manual.pdf">PDF</a></div>
+      </article>
+      <article class="card">
+        <div class="id">CCS-04 · 12 slides</div>
+        <h3>How-To Guides plan</h3>
+        <p>How task cards are cut from the SUM's procedures, with a catalog, a page template, writing rules, and the walkthrough-before-review lifecycle.</p>
+        <ul><li>One guide, three platform builds</li><li>From Jira story to the station</li></ul>
+        <div class="links"><a href="samples/CCS-04_How-To_Guides_Plan.pdf">PDF</a><a href="samples/CCS-04_How-To_Guides_Plan.pptx">PPTX</a></div>
+      </article>
+      <article class="card">
+        <div class="id">CCS-05 · 5 pages</div>
+        <h3>Training lesson 2.1: Build and validate a route</h3>
+        <p>Trainee guide and instructor key in Navy lesson format, with objectives written as condition, behavior, and standard.</p>
+        <ul><li>Job sheet for paired lab work</li><li>Knowledge check, performance checklist, answer key</li></ul>
+        <div class="links"><a href="samples/CCS-05_Training_Lesson_2.1_Build_and_Validate_a_Route.pdf">PDF</a></div>
+      </article>
+      <article class="card feature">
+        <div class="id">CCS-06 · 16 pages</div>
+        <h3>Site installation and configuration guide</h3>
+        <p>A formal deliverable for site administrators: verify media, install, configure, verify, record, with rollback and troubleshooting.</p>
+        <ul><li>Full front and back matter, numbered tables and figures</li><li>Install record for CM and ISSO sign-off</li></ul>
+        <div class="links"><a href="samples/CCS-06_Site_Installation_and_Configuration_Guide.pdf">PDF</a></div>
+      </article>
+      <article class="card feature">
+        <div class="id">CCS-07 · 40 files</div>
+        <h3>Installation guide — DITA source</h3>
+        <p>The source for CCS-06, commented file by file to show which DITA feature does what. Builds cleanly with DITA-OT 4.2.4 in strict (DTD-validated) mode.</p>
+        <ul><li>Bookmap, keys, reuse library, task / concept / reference / troubleshooting / glossary topics</li><li>Land and ship editions from one source</li></ul>
+        <div class="links"><a href="https://github.com/nbsmith-dev/ccs-documentation-portfolio/tree/main/samples/CCS-07_Installation_Guide_DITA_Source">Browse source</a><a href="samples/CCS-07_Installation_Guide_DITA_Source.zip">ZIP</a><a href="samples/CCS-07_DITA-OT_Build_Output_Land_Edition.pdf">DITA-OT PDF</a></div>
+      </article>
+      <article class="card">
+        <div class="id">CCS-08 · 3 pages</div>
+        <h3>Sprint documentation status report</h3>
+        <p>The report that follows each sprint review: bottom line, burndown and velocity, deliverable status, Jira tickets, requirements database, risks, and next sprint.</p>
+        <ul><li>Numbers reconcile: done + carried = committed</li><li>Shows the Jira filter behind the counts</li></ul>
+        <div class="links"><a href="samples/CCS-08_Sprint_Documentation_Status_Report.pdf">PDF</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="system">
+    <h2>The system, as these samples model it</h2>
+    <p class="sub">A notional drawing based on public NAVAIR descriptions, not the program's official architecture.</p>
+    <figure>
+      <div class="scroll">
+      <svg viewBox="0 0 700 300" role="img" aria-label="Control stations run one common CCS software stack, which reaches each vehicle through a thin platform-specific adapter layer.">
+        <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+        <g class="box"><rect x="10" y="10" width="160" height="36" rx="4"/><rect x="185" y="10" width="160" height="36" rx="4"/><rect x="360" y="10" width="160" height="36" rx="4"/><rect x="535" y="10" width="155" height="36" rx="4"/></g>
+        <g class="t" text-anchor="middle"><text x="90" y="33">Land ops center</text><text x="265" y="33">Surface ship</text><text x="440" y="33">Submarine</text><text x="612" y="33">Carrier</text></g>
+        <line x1="350" y1="50" x2="350" y2="70" stroke="currentColor" stroke-width="1.3" marker-start="url(#ah)" marker-end="url(#ah)"/>
+        <rect x="10" y="72" width="680" height="128" rx="6" fill="none" stroke="var(--accent)" stroke-width="2"/>
+        <text x="24" y="92" class="ts" style="fill:var(--accent);font-weight:600;letter-spacing:.06em">CCS — WRITTEN ONCE, SHARED BY EVERY VEHICLE</text>
+        <rect class="box" x="26" y="100" width="648" height="26" rx="4"/><text class="t tb" x="350" y="118" text-anchor="middle">Common user interface</text>
+        <g class="hi"><rect x="26" y="132" width="208" height="30" rx="4"/><rect x="246" y="132" width="208" height="30" rx="4"/><rect x="466" y="132" width="208" height="30" rx="4"/></g>
+        <g class="t tb" text-anchor="middle"><text x="130" y="152">Mission Planning</text><text x="350" y="152">Vehicle Management</text><text x="570" y="152">Mission Management</text></g>
+        <rect class="box" x="26" y="168" width="648" height="24" rx="4"/><text class="ts" x="350" y="184" text-anchor="middle">Common framework · airspace · messaging · sensor PED</text>
+        <line x1="350" y1="202" x2="350" y2="220" stroke="currentColor" stroke-width="1.3" marker-start="url(#ah)" marker-end="url(#ah)"/>
+        <rect class="ad" x="10" y="222" width="680" height="28" rx="4"/><text class="t ta" x="350" y="241" text-anchor="middle">Platform adapters — the only layer that changes per vehicle</text>
+        <g class="box"><rect x="10" y="258" width="218" height="34" rx="4"/><rect x="241" y="258" width="218" height="34" rx="4"/><rect x="472" y="258" width="218" height="34" rx="4"/></g>
+        <g class="t tb" text-anchor="middle"><text x="119" y="280">MQ-25</text><text x="350" y="280">MQ-4C</text><text x="581" y="280">UUV</text></g>
+      </svg>
+      </div>
+      <figcaption>The documentation follows the same shape: shared layers become shared topics written once; the adapter layer becomes platform-tagged content filtered at build time.</figcaption>
+    </figure>
+  </section>
+
+  <section id="dita">
+    <h2>How the set is single-sourced</h2>
+    <p class="sub">One pool of DITA topics feeds the manual, the How-To Guides, and training. The CCS-07 source shows each mechanism with comments.</p>
+    <div class="two">
+      <div class="pane"><h3>Mechanisms</h3><ul>
+        <li><b>Bookmap</b> — decides what goes in each deliverable, and in what order</li>
+        <li><b>Keys</b> — release number and paths set once per release</li>
+        <li><b>Conref</b> — every warning and caution written once and reused</li>
+        <li><b>Filtering</b> — <code>@platform</code>, <code>@product</code>, <code>@audience</code> build each edition</li>
+        <li><b>Topic types</b> — concept, task, reference, troubleshooting, glossary</li></ul></div>
+      <div class="pane"><h3>What strict validation enforced</h3><ul>
+        <li>A warning in a task step is only allowed <b>before</b> the action</li>
+        <li>Appendices sit in the bookmap, not inside back matter</li>
+        <li>Reference bodies hold sections and tables, not loose notes</li>
+        <li>Title-page metadata follows a fixed order</li>
+        <li>Details in the <a href="https://github.com/nbsmith-dev/ccs-documentation-portfolio/blob/main/samples/CCS-07_Installation_Guide_DITA_Source/README.md">source README</a></li></ul></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Disclaimer.</b> No CUI, classified, proprietary, or export-controlled information is contained in these documents. Provided as technical writing samples — Nathan B. Smith. All content is illustrative and based only on the publicly available sources listed above. Screens, labels, values, procedures, document and contract numbers, ticket numbers, and names are invented. This portfolio is not affiliated with or endorsed by the U.S. Navy, NAVAIR, NIWC Pacific, or SAIC.</p>
+    <p>Last updated 23 September 2026.</p>
+  </div>
+</footer>
+</body>
+</html>
