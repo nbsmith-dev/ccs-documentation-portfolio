@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CCS Documentation Portfolio — Nathan B. Smith</title>
-<meta name="description" content="Documentation samples for a Common Control System (CCS) software technical writing role: SUM, How-To Guides, training, installation guide with DITA source, and a sprint status report. Illustrative content built from public sources only.">
+<meta name="description" content="Documentation samples for the SAIC Senior Software Technical Writer role supporting the Common Control System (CCS): SUM, How-To Guides, training, installation guide with DITA source, and a sprint status report. Illustrative content built from public sources only.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@600&display=swap">
@@ -28,9 +28,12 @@ header{background:var(--accent-dk);color:#fff;padding:40px 0 32px}
 @media (prefers-color-scheme:dark){header{background:#0B2A2E}}
 .eyebrow{font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#8FD3CF}
 h1{font:600 clamp(30px,5vw,44px)/1.12 var(--serif);margin:.25em 0 .3em;text-wrap:balance}
-.lede{max-width:64ch;color:#D5E6E4;margin:0}
+.lede{max-width:66ch;color:#D5E6E4;margin:0}
 .hlinks{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:18px;font-size:15px}
 .hlinks a{color:#fff;text-decoration-color:rgba(255,255,255,.4);text-underline-offset:3px}
+.snap{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-top:22px}
+.snap div{border:1px solid rgba(255,255,255,.22);border-radius:6px;padding:10px 12px;font-size:14px;color:#D5E6E4}
+.snap b{display:block;color:#fff;font-size:15px}
 .banner{margin:24px 0 0;background:var(--amber-soft);border:1px solid var(--amber);border-radius:6px;padding:14px 16px;font-size:15px}
 .banner b{color:var(--amber)}
 nav.toc{display:flex;gap:6px;flex-wrap:wrap;margin:22px 0 0;font-size:14px}
@@ -45,6 +48,13 @@ th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px sol
 th{font:600 12px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--ground)}
 tr:last-child td{border-bottom:0}
 td .id{font:600 13px var(--mono);color:var(--accent)}
+.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:22px}
+.quick a{display:block;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--accent);border-radius:6px;padding:14px 16px}
+.quick a:hover{background:var(--accent-soft)}
+.quick .id{font:600 12px var(--mono);letter-spacing:.06em;color:var(--accent)}
+.quick b{display:block;margin:2px 0 4px}
+.quick span{color:var(--muted);font-size:14px}
+h3.small{font:600 13px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
 ol.path{list-style:none;counter-reset:step;padding:0;margin:0;display:grid;gap:8px}
 ol.path li{counter-increment:step;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
 ol.path li::before{content:counter(step);font:600 15px var(--mono);color:#fff;background:var(--accent);width:28px;height:28px;border-radius:50%;display:grid;place-items:center}
@@ -69,26 +79,41 @@ figcaption{color:var(--muted);font-size:14px;margin-top:10px;max-width:72ch}
 .hi{fill:var(--accent-soft);stroke:var(--accent)}
 .ad{fill:var(--amber-soft);stroke:var(--amber);stroke-dasharray:5 4}
 .t{font-size:13px;fill:var(--ink)} .tb{font-weight:600} .ts{font-size:11.5px;fill:var(--muted)} .ta{fill:var(--amber);font-weight:600}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media (max-width:760px){.two{grid-template-columns:1fr}}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:860px){.three{grid-template-columns:1fr}}
 .pane{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
 .pane h3{margin:0 0 6px;font-size:16px}
 .pane ul{margin:0;padding-left:18px;font-size:15px}
 code{font:14px var(--mono);background:var(--accent-soft);padding:1px 5px;border-radius:3px}
 footer{margin-top:44px;border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:14px}
 footer p{max-width:80ch}
+@media print{
+  header{background:none!important;color:var(--ink);padding:0 0 12px;border-bottom:2px solid var(--ink)}
+  .eyebrow,.lede,.snap div,.snap b,.hlinks a{color:var(--ink)!important}
+  .snap div{border-color:var(--line)}
+  nav.toc{display:none}
+  section,.card,figure,.tbl{break-inside:avoid}
+  a{text-decoration:none}
+}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <div class="eyebrow">Technical writing samples · Common Control System</div>
+    <div class="eyebrow">SAIC · Senior Software Technical Writer · Job ID 2616178</div>
     <h1>CCS Documentation Portfolio</h1>
-    <p class="lede">A documentation set written the way a Software Support Activity would deliver it: a user manual, How-To Guides, training, an installation guide with its DITA source, and a sprint status report. Prepared by Nathan B. Smith for the SAIC Senior Software Technical Writer interview (CCS, NIWC Pacific).</p>
+    <p class="lede">Eight documentation samples for the Common Control System, written the way a Software Support Activity delivers them: a Software User Manual, How-To Guides, a training lesson, an installation guide with its DITA source, and a sprint status report. Each one maps to a duty in the posting.</p>
+    <div class="snap" aria-label="Candidate summary">
+      <div><b>Nathan B. Smith</b>LCDR, USN (Ret.) · 23 years, Surface Warfare</div>
+      <div><b>Active Secret clearance</b>Eligible for Top Secret</div>
+      <div><b>Senior Principal Technical Writer</b>Northrop Grumman, RQ-4 Global Hawk</div>
+      <div><b>Jira · Confluence · DITA · S1000D</b>INCOSE CSEP · D.C.S., Big Data Analytics</div>
+    </div>
     <div class="hlinks">
-      <a href="https://nbsmith-dev.github.io/writing-samples/">Main writing-samples portfolio</a>
+      <a href="mailto:nbsmith@outlook.com">nbsmith@outlook.com</a>
       <a href="https://www.linkedin.com/in/nathanbsmith92163">LinkedIn</a>
+      <a href="https://nbsmith-dev.github.io/writing-samples/">Main writing-samples portfolio</a>
       <a href="https://github.com/nbsmith-dev/ccs-documentation-portfolio">Source repository</a>
     </div>
   </div>
@@ -97,11 +122,11 @@ footer p{max-width:80ch}
 <main class="wrap">
 
   <div class="banner" role="note">
-    <b>Illustrative samples.</b> Every screen, label, value, procedure, ticket number, and name in these documents is invented for demonstration. They are built only from publicly available press and web content, listed below. No CUI, classified, proprietary, or export-controlled information is contained in these documents. Provided as technical writing samples — Nathan B. Smith.
+    <b>Illustrative samples.</b> Every screen, label, value, procedure, ticket number, and name in these documents is invented for demonstration and built only from the public sources listed below. No CUI, classified, proprietary, or export-controlled information is contained in these documents. Provided as technical writing samples — Nathan B. Smith.
   </div>
 
   <nav class="toc" aria-label="Sections">
-    <a href="#sources">Sources</a><a href="#walkthrough">Walkthrough</a><a href="#duties">Job duties map</a><a href="#samples">Samples</a><a href="#system">The system</a><a href="#dita">DITA single source</a>
+    <a href="#sources">Sources</a><a href="#start">Where to start</a><a href="#duties">Role fit</a><a href="#samples">All samples</a><a href="#system">The system</a><a href="#dita">Single sourcing</a>
   </nav>
 
   <section id="sources">
@@ -123,37 +148,42 @@ footer p{max-width:80ch}
     </table></div>
   </section>
 
-  <section id="walkthrough">
-    <h2>Suggested walkthrough</h2>
-    <p class="sub">About 20 minutes, in this order: from understanding the system, to the documents operators use, to how the set is built and reported.</p>
+  <section id="start">
+    <h2>Where to start</h2>
+    <p class="sub">If you have five minutes, open these three. They are the formal deliverables closest to the day-to-day work of the role.</p>
+    <div class="quick">
+      <a href="samples/CCS-03_Software_User_Manual.pdf"><span class="id">CCS-03 · 22 pages</span><b>Software User Manual</b><span>The core deliverable: front matter, operator procedures, emergencies, messages, index.</span></a>
+      <a href="samples/CCS-06_Site_Installation_and_Configuration_Guide.pdf"><span class="id">CCS-06 · 16 pages</span><b>Installation and configuration guide</b><span>Release media verification, install, configure, verify, and a CM sign-off record.</span></a>
+      <a href="samples/CCS-08_Sprint_Documentation_Status_Report.pdf"><span class="id">CCS-08 · 3 pages</span><b>Sprint status report</b><span>What the program sees after each sprint: burndown, deliverables, Jira, requirements, risks.</span></a>
+    </div>
+    <h3 class="small">Full walkthrough · about 20 minutes</h3>
     <ol class="path">
       <li><div><b><a href="samples/CCS-01_CCS_Overview_for_Technical_Writers.pdf">CCS-01 · CCS overview for technical writers</a></b><span>What CCS is, and why its architecture is also the documentation strategy.</span></div></li>
-      <li><div><b><a href="samples/CCS-02_SUM_DITA_Outline.pdf">CCS-02 · SUM outline in DITA</a></b><span>How the user manual maps onto MIL-STD-498 sections and DITA topic types.</span></div></li>
-      <li><div><b><a href="samples/CCS-03_Software_User_Manual.pdf">CCS-03 · Software User Manual</a></b><span>The formal deliverable: front matter, procedures, emergencies, messages, back matter.</span></div></li>
+      <li><div><b><a href="samples/CCS-02_SUM_DITA_Outline.pdf">CCS-02 · SUM outline</a></b><span>How the user manual maps onto MIL-STD-498 sections and reusable topics.</span></div></li>
+      <li><div><b><a href="samples/CCS-03_Software_User_Manual.pdf">CCS-03 · Software User Manual</a></b><span>The formal deliverable, with platform-tagged steps and a safety summary built from the procedure warnings.</span></div></li>
       <li><div><b><a href="samples/CCS-04_How-To_Guides_Plan.pdf">CCS-04 · How-To Guides</a></b><span>Task cards for the station, reused from the SUM's procedures.</span></div></li>
       <li><div><b><a href="samples/CCS-05_Training_Lesson_2.1_Build_and_Validate_a_Route.pdf">CCS-05 · Training lesson</a></b><span>Objectives, job sheet, knowledge check, and assessment for one operator task.</span></div></li>
-      <li><div><b><a href="samples/CCS-06_Site_Installation_and_Configuration_Guide.pdf">CCS-06 · Installation and configuration guide</a> and <a href="https://github.com/nbsmith-dev/ccs-documentation-portfolio/tree/main/samples/CCS-07_Installation_Guide_DITA_Source">CCS-07 · its DITA source</a></b><span>Media verification, install, configure, verify, record — and the commented source that builds it.</span></div></li>
-      <li><div><b><a href="samples/CCS-08_Sprint_Documentation_Status_Report.pdf">CCS-08 · Sprint status report</a></b><span>What goes to the program after each sprint review: burndown, deliverables, Jira, requirements, risks.</span></div></li>
+      <li><div><b><a href="samples/CCS-06_Site_Installation_and_Configuration_Guide.pdf">CCS-06 · Installation and configuration guide</a> and <a href="https://github.com/nbsmith-dev/ccs-documentation-portfolio/tree/main/samples/CCS-07_Installation_Guide_DITA_Source">CCS-07 · its source</a></b><span>The finished guide, then the commented source that builds it.</span></div></li>
+      <li><div><b><a href="samples/CCS-08_Sprint_Documentation_Status_Report.pdf">CCS-08 · Sprint status report</a></b><span>Reporting to the program after each sprint review.</span></div></li>
     </ol>
   </section>
 
   <section id="duties">
-    <h2>Job duties map</h2>
-    <p class="sub">Each duty in the posting, and the sample that shows it.</p>
+    <h2>How the samples map to the role</h2>
+    <p class="sub">Each duty in the posting, the sample that shows it, and where the same work was done on a program.</p>
     <div class="tbl"><table>
-      <tr><th style="width:38%">Duty in the posting</th><th>Where it is shown</th></tr>
-      <tr><td>Maintain training documentation, How-To Guides, and System User Manuals</td><td><span class="id">CCS-03</span> SUM · <span class="id">CCS-04</span> How-To Guides · <span class="id">CCS-05</span> training lesson</td></tr>
-      <tr><td>Write and edit manuals and instructions on installation, operation, and maintenance of software systems</td><td><span class="id">CCS-06</span> installation and configuration guide · <span class="id">CCS-03</span> Sections 4–5</td></tr>
-      <tr><td>Configuration management of documents and distributed media</td><td><span class="id">CCS-06</span> media verification and install record · <span class="id">CCS-08</span> media packages built and logged · record-of-changes pages in every formal document</td></tr>
-      <tr><td>Requirements management and reporting in Jira and Confluence</td><td><span class="id">CCS-08</span> requirements database updates, traceability, Jira filter · <span class="id">CCS-04</span> Jira-driven guide lifecycle</td></tr>
-      <tr><td>Understanding of software development processes</td><td><span class="id">CCS-01</span> release loop · <span class="id">CCS-08</span> sprint cadence, velocity, carry-over</td></tr>
-      <tr><td>Initiative and ownership of documentation quality</td><td><span class="id">CCS-02</span> and <span class="id">CCS-07</span> single-source DITA design, validated with DITA-OT in strict mode</td></tr>
-      <tr><td>Classified material handling (discussed in interview, not documented here)</td><td><span class="id">CCS-06</span> shows the handling steps for release media using illustrative content only</td></tr>
+      <tr><th style="width:32%">Duty</th><th style="width:36%">Shown in</th><th>Program experience</th></tr>
+      <tr><td>Maintain training documentation, How-To Guides, and System User Manuals</td><td><span class="id">CCS-03</span> SUM · <span class="id">CCS-04</span> How-To Guides · <span class="id">CCS-05</span> training lesson</td><td>Northrop Grumman RQ-4 technical manuals; Navy training and qualification programs</td></tr>
+      <tr><td>Write and edit manuals on installation, operation, and maintenance of software systems</td><td><span class="id">CCS-06</span> installation guide · <span class="id">CCS-03</span> Sections 4–5</td><td>Software documentation at Verimatrix; system manuals at General Atomics and Collins Aerospace</td></tr>
+      <tr><td>Configuration management of documents and distributed media</td><td><span class="id">CCS-06</span> media verification and install record · <span class="id">CCS-08</span> media packages logged · record-of-changes pages in each formal document</td><td>Data module version control and release at Northrop Grumman</td></tr>
+      <tr><td>Requirements management and reporting in Jira and Confluence</td><td><span class="id">CCS-08</span> requirements database updates, traceability, Jira filter · <span class="id">CCS-04</span> Jira-driven guide lifecycle</td><td>Jira and Confluence at Northrop Grumman, Collins Aerospace, and Verimatrix</td></tr>
+      <tr><td>Understanding of software development processes</td><td><span class="id">CCS-01</span> release loop · <span class="id">CCS-08</span> sprint cadence, velocity, carry-over</td><td>Agile sprint work with engineering teams; INCOSE CSEP</td></tr>
+      <tr><td>Classified material handling</td><td><span class="id">CCS-06</span> handling steps for release media, illustrative content only</td><td>Active Secret clearance; classified handling at Northrop Grumman and across 23 years of Navy service</td></tr>
     </table></div>
   </section>
 
   <section id="samples">
-    <h2>Samples</h2>
+    <h2>All samples</h2>
     <p class="sub">PDFs open in the browser. Decks are also available as PowerPoint files.</p>
     <div class="cards">
       <article class="card">
@@ -165,8 +195,8 @@ footer p{max-width:80ch}
       </article>
       <article class="card">
         <div class="id">CCS-02 · 11 slides</div>
-        <h3>Software User Manual outline in DITA</h3>
-        <p>MIL-STD-498 SUM sections mapped to a bookmap, topic types, filtering attributes, and five builds from one source.</p>
+        <h3>Software User Manual outline</h3>
+        <p>MIL-STD-498 SUM sections mapped to a book structure, topic types, filtering attributes, and five builds from one source.</p>
         <ul><li>Topic types with plain-language glosses</li><li>Open questions for the program</li></ul>
         <div class="links"><a href="samples/CCS-02_SUM_DITA_Outline.pdf">PDF</a><a href="samples/CCS-02_SUM_DITA_Outline.pptx">PPTX</a></div>
       </article>
@@ -198,14 +228,14 @@ footer p{max-width:80ch}
         <ul><li>Full front and back matter, numbered tables and figures</li><li>Install record for CM and ISSO sign-off</li></ul>
         <div class="links"><a href="samples/CCS-06_Site_Installation_and_Configuration_Guide.pdf">PDF</a></div>
       </article>
-      <article class="card feature">
-        <div class="id">CCS-07 · 40 files</div>
-        <h3>Installation guide — DITA source</h3>
-        <p>The source for CCS-06, commented file by file to show which DITA feature does what. Builds cleanly with DITA-OT 4.2.4 in strict (DTD-validated) mode.</p>
-        <ul><li>Bookmap, keys, reuse library, task / concept / reference / troubleshooting / glossary topics</li><li>Land and ship editions from one source</li></ul>
-        <div class="links"><a href="https://github.com/nbsmith-dev/ccs-documentation-portfolio/tree/main/samples/CCS-07_Installation_Guide_DITA_Source">Browse source</a><a href="samples/CCS-07_Installation_Guide_DITA_Source.zip">ZIP</a><a href="samples/CCS-07_DITA-OT_Build_Output_Land_Edition.pdf">DITA-OT PDF</a></div>
-      </article>
       <article class="card">
+        <div class="id">CCS-07 · 40 files</div>
+        <h3>Installation guide — structured source</h3>
+        <p>The DITA source for CCS-06, commented file by file to show which reuse feature does what. Builds cleanly with DITA-OT 4.2.4 in strict (DTD-validated) mode.</p>
+        <ul><li>Book map, variables, reuse library, task / concept / reference / troubleshooting / glossary topics</li><li>Land and ship editions from one source</li></ul>
+        <div class="links"><a href="https://github.com/nbsmith-dev/ccs-documentation-portfolio/tree/main/samples/CCS-07_Installation_Guide_DITA_Source">Browse source</a><a href="samples/CCS-07_Installation_Guide_DITA_Source.zip">ZIP</a><a href="samples/CCS-07_DITA-OT_Build_Output_Land_Edition.pdf">Built PDF</a></div>
+      </article>
+      <article class="card feature">
         <div class="id">CCS-08 · 3 pages</div>
         <h3>Sprint documentation status report</h3>
         <p>The report that follows each sprint review: bottom line, burndown and velocity, deliverable status, Jira tickets, requirements database, risks, and next sprint.</p>
@@ -243,17 +273,23 @@ footer p{max-width:80ch}
 
   <section id="dita">
     <h2>How the set is single-sourced</h2>
-    <p class="sub">One pool of DITA topics feeds the manual, the How-To Guides, and training. The CCS-07 source shows each mechanism with comments.</p>
-    <div class="two">
+    <p class="sub">One pool of topics feeds the manual, the How-To Guides, and training. The samples were built in DITA; the same design carries directly into MadCap Flare.</p>
+    <div class="three">
       <div class="pane"><h3>Mechanisms</h3><ul>
-        <li><b>Bookmap</b> — decides what goes in each deliverable, and in what order</li>
+        <li><b>Book map</b> — what goes in each deliverable, and in what order</li>
         <li><b>Keys</b> — release number and paths set once per release</li>
-        <li><b>Conref</b> — every warning and caution written once and reused</li>
+        <li><b>Content reuse</b> — every warning and caution written once</li>
         <li><b>Filtering</b> — <code>@platform</code>, <code>@product</code>, <code>@audience</code> build each edition</li>
         <li><b>Topic types</b> — concept, task, reference, troubleshooting, glossary</li></ul></div>
+      <div class="pane"><h3>Same design in MadCap Flare</h3><ul>
+        <li>Book map → <b>TOC and targets</b></li>
+        <li>Keys → <b>variables</b></li>
+        <li>Content reuse → <b>snippets</b></li>
+        <li>Filtering → <b>condition tags</b></li>
+        <li>Topic types → <b>topic templates</b> and style rules</li></ul></div>
       <div class="pane"><h3>What strict validation enforced</h3><ul>
-        <li>A warning in a task step is only allowed <b>before</b> the action</li>
-        <li>Appendices sit in the bookmap, not inside back matter</li>
+        <li>A warning in a task step comes <b>before</b> the action</li>
+        <li>Appendices sit in the book map, not inside back matter</li>
         <li>Reference bodies hold sections and tables, not loose notes</li>
         <li>Title-page metadata follows a fixed order</li>
         <li>Details in the <a href="https://github.com/nbsmith-dev/ccs-documentation-portfolio/blob/main/samples/CCS-07_Installation_Guide_DITA_Source/README.md">source README</a></li></ul></div>
@@ -265,7 +301,7 @@ footer p{max-width:80ch}
 <footer>
   <div class="wrap">
     <p><b>Disclaimer.</b> No CUI, classified, proprietary, or export-controlled information is contained in these documents. Provided as technical writing samples — Nathan B. Smith. All content is illustrative and based only on the publicly available sources listed above. Screens, labels, values, procedures, document and contract numbers, ticket numbers, and names are invented. This portfolio is not affiliated with or endorsed by the U.S. Navy, NAVAIR, NIWC Pacific, or SAIC.</p>
-    <p>Last updated 23 September 2026.</p>
+    <p>Nathan B. Smith · <a href="mailto:nbsmith@outlook.com">nbsmith@outlook.com</a> · <a href="https://www.linkedin.com/in/nathanbsmith92163">LinkedIn</a> · <a href="https://nbsmith-dev.github.io/writing-samples/">Portfolio</a> · Last updated 24 September 2026.</p>
   </div>
 </footer>
 </body>
