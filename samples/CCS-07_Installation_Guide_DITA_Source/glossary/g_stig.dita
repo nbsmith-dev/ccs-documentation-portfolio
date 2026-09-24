@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="g_stig">
+  <glossterm>Security Technical Implementation Guide</glossterm>
+  <glossdef>DoD configuration standard used to harden the host operating system.</glossdef>
+  <glossBody>
+    <glossSurfaceForm>Security Technical Implementation Guide (STIG)</glossSurfaceForm>
+    <glossAlt><glossAcronym>STIG</glossAcronym></glossAlt>
+  </glossBody>
+</glossentry>

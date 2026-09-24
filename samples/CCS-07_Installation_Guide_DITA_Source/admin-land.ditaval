@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  DITAVAL filter for the Land station edition of this guide.
+  Rule order: exclude everything tagged, then include what this
+  build needs. Untagged content is always kept (it is shared).
+-->
+<val>
+  <prop att="audience" val="admin" action="include"/>
+  <prop att="product" action="exclude"/>
+  <prop att="product" val="station-land" action="include"/>
+  <!-- This site controls MQ-4C and UUV: keep both smoke-test steps. -->
+  <prop att="platform" action="exclude"/>
+  <prop att="platform" val="mq4c" action="include"/>
+  <prop att="platform" val="uuv" action="include"/>
+</val>

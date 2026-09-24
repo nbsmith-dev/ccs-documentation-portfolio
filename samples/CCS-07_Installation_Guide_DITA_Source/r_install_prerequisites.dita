@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<!--
+  REFERENCE with @product filtering. The Displays row differs by
+  station type; DITAVAL keeps only the row for the station being built.
+-->
+<reference id="r_install_prerequisites">
+  <title>Before you begin</title>
+  <shortdesc>Confirm every requirement before you open the media. A missing prerequisite is
+    the most common cause of a failed install.</shortdesc>
+  <refbody>
+    <simpletable relcolwidth="1* 2* 2*">
+      <sthead><stentry>Requirement</stentry><stentry>Minimum (illustrative)</stentry><stentry>How to check</stentry></sthead>
+      <strow><stentry>Operating system</stentry><stentry>RHEL 9.x, STIG-hardened site image</stentry><stentry><codeph>cat /etc/redhat-release</codeph></stentry></strow>
+      <strow><stentry>Java runtime</stentry><stentry><keyword keyref="java-version"/></stentry><stentry><codeph>java -version</codeph></stentry></strow>
+      <strow><stentry>Memory / disk</stentry><stentry>32 GB RAM; 200 GB free</stentry><stentry><codeph>free -g</codeph>; <codeph>df -h /opt</codeph></stentry></strow>
+      <!-- Conditional rows: one per station type. -->
+      <strow product="station-land"><stentry>Displays</stentry><stentry>Two monitors, 1920 x 1080</stentry><stentry>Display settings</stentry></strow>
+      <strow product="station-ship station-sub"><stentry>Displays</stentry><stentry>Two ruggedized monitors, 1920 x 1080</stentry><stentry>Display settings</stentry></strow>
+      <strow><stentry>Media</stentry><stentry>Release disc, labeled and logged</stentry><stentry>Label matches <xref keyref="vdd">the VDD</xref></stentry></strow>
+    </simpletable>
+    <!-- conref: the warning text lives in the reuse library.
+         A reference body only accepts sections and tables at the top
+         level, so the note is wrapped in a <section>. -->
+    <section><note conref="reuse/warnings.dita#warnings/w-sim-mode"/></section>
+  </refbody>
+</reference>

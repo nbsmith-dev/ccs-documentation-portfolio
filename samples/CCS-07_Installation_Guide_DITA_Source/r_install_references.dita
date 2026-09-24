@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<!-- REFERENCE topic: look-up facts. Readers scan it; they don't follow it. -->
+<reference id="r_install_references">
+  <title>References</title>
+  <shortdesc>Documents this guide depends on, and what each one is for.</shortdesc>
+  <refbody>
+    <simpletable relcolwidth="2* 3*">
+      <sthead><stentry>Reference</stentry><stentry>Purpose in this guide</stentry></sthead>
+      <strow><stentry>CCS Version Description Document (VDD), release <keyword keyref="ccs-version"/></stentry><stentry>Lists the exact files, versions, and checksums on the media</stentry></strow>
+      <strow><stentry>CCS Software User Manual, Sections 3.3 and 4.1.3</stentry><stentry>Software environment and the operator view of installation</stentry></strow>
+      <strow><stentry>Site configuration baseline</stentry><stentry>The approved property values for this site</stentry></strow>
+      <strow><stentry>DoD Instruction 5200.48, CUI</stentry><stentry>Marking of media, logs, and printed records</stentry></strow>
+    </simpletable>
+  </refbody>
+</reference>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="g_cm">
+  <glossterm>Configuration Management</glossterm>
+  <glossdef>Keeping a controlled, recorded baseline of exactly which versions are installed where.</glossdef>
+  <glossBody>
+    <glossSurfaceForm>Configuration Management (CM)</glossSurfaceForm>
+    <glossAlt><glossAcronym>CM</glossAcronym></glossAlt>
+  </glossBody>
+</glossentry>

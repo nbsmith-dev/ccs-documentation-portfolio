@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="g_cui">
+  <glossterm>Controlled Unclassified Information</glossterm>
+  <glossdef>Unclassified information that still requires safeguarding and marking under DoDI 5200.48.</glossdef>
+  <glossBody>
+    <glossSurfaceForm>Controlled Unclassified Information (CUI)</glossSurfaceForm>
+    <glossAlt><glossAcronym>CUI</glossAcronym></glossAlt>
+  </glossBody>
+</glossentry>

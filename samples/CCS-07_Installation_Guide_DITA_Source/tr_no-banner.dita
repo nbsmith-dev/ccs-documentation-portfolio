@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="tr_no-banner">
+  <title>No classification banner on screen</title>
+  <troublebody>
+    <condition><p>No classification banner on screen.</p></condition>
+    <troubleSolution>
+      <cause><p>ccs.ui.banner is empty.</p></cause>
+      <remedy>
+        <steps>
+          <step><cmd>Set ccs.ui.banner from the site baseline.</cmd></step>
+          <step><cmd>Restart the service.</cmd></step>
+        </steps>
+      </remedy>
+    </troubleSolution>
+  </troublebody>
+</troubleshooting>

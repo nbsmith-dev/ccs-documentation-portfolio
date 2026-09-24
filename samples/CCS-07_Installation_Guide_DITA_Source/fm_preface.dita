@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- PREFACE (concept). The conventions table mirrors the semantic
+     elements used in the topics (uicontrol, codeph, stepresult). -->
+<concept id="fm_preface">
+  <title>Preface</title>
+  <shortdesc>Purpose, scope, audience, and conventions for this guide.</shortdesc>
+  <conbody>
+    <section><title>Purpose and scope</title>
+      <p>This guide tells site administrators how to install, configure, verify, and record CCS
+        release <keyword keyref="ccs-version"/> on a control-station host.</p></section>
+    <section><title>Audience</title>
+      <p>Site administrators with root access; the ISSO for witnessed steps.</p></section>
+    <section><title>Conventions</title>
+      <simpletable relcolwidth="1* 3*">
+        <sthead><stentry>Convention</stentry><stentry>Meaning</stentry></sthead>
+        <strow><stentry><uicontrol>Bold</uicontrol></stentry><stentry>A control on screen</stentry></strow>
+        <strow><stentry><codeph>Monospace</codeph></stentry><stentry>A command, file, or value you type</stentry></strow>
+        <strow><stentry>Line after a step</stentry><stentry>What you should see</stentry></strow>
+        <strow><stentry>WARNING</stentry><stentry>Risk to people or mission</stentry></strow>
+        <strow><stentry>CAUTION</stentry><stentry>Risk to equipment or data</stentry></strow>
+      </simpletable></section>
+  </conbody>
+</concept>

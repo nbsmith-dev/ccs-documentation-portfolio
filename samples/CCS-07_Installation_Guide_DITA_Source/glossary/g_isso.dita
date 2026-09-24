@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="g_isso">
+  <glossterm>Information System Security Officer</glossterm>
+  <glossdef>The person responsible for a system's security posture; witnesses media checks and signs install records.</glossdef>
+  <glossBody>
+    <glossSurfaceForm>Information System Security Officer (ISSO)</glossSurfaceForm>
+    <glossAlt><glossAcronym>ISSO</glossAcronym></glossAlt>
+  </glossBody>
+</glossentry>

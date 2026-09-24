@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<!-- RECORD OF CHANGES, referenced from <amendments>. Each release adds
+     a row; change bars in the body come from DITAVAL flagging of @rev. -->
+<topic id="fm_record-of-changes">
+  <title>Record of changes</title>
+  <body>
+    <simpletable relcolwidth="1* 1* 4* 1*">
+      <sthead><stentry>Revision</stentry><stentry>Date</stentry><stentry>Description</stentry><stentry>By</stentry></sthead>
+      <strow><stentry>A</stentry><stentry>2026-09-23</stentry><stentry>Initial release for CCS <keyword keyref="ccs-version"/></stentry><stentry>NBS</stentry></strow>
+    </simpletable>
+  </body>
+</topic>

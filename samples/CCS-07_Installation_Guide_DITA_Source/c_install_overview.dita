@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!--
+  CONCEPT topic: answers "what is this and why?" No steps allowed.
+  DITA keeps explanation (concept) separate from action (task) so a
+  task stays short enough to follow at the console.
+  File-name prefix c_ = concept; install = function; overview = object.
+-->
+<concept id="c_install_overview">
+  <title>Installation overview</title>
+  <!-- shortdesc: one sentence that appears in the TOC hover, search
+       results, and link previews. Required by our style guide. -->
+  <shortdesc>This guide takes a site administrator from verified release media to a working,
+    tested CCS station in about 3 hours.</shortdesc>
+  <conbody>
+    <p conref="reuse/notices.dita#notices/illustrative"/>
+    <!-- simpletable: a plain 2-column table, no properties semantics. -->
+    <simpletable relcolwidth="1* 3*">
+      <sthead><stentry>Item</stentry><stentry>Detail</stentry></sthead>
+      <strow><stentry>Audience</stentry><stentry>Site administrators with root access to the control-station host</stentry></strow>
+      <strow><stentry>Applies to</stentry><stentry>CCS release <keyword keyref="ccs-version"/>, all station types</stentry></strow>
+      <strow><stentry>Time required</stentry><stentry>About 3 hours</stentry></strow>
+      <strow><stentry>People</stentry><stentry>Site administrator (performs); ISSO (witnesses and signs)</stentry></strow>
+    </simpletable>
+    <section id="glance">
+      <title>The installation at a glance</title>
+      <!-- Figures are referenced, never embedded. The same SVG serves
+           PDF and HTML5 outputs. -->
+      <fig>
+        <title>Five stages, each with a check that must pass</title>
+        <image href="images/install-flow.svg" placement="break">
+          <alt>Verify media, install, configure, verify install, record.</alt>
+        </image>
+      </fig>
+    </section>
+  </conbody>
+</concept>

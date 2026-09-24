@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="t_install_rollback">
+  <title>Upgrade and rollback</title>
+  <shortdesc>Upgrades repeat the full installation; roll back if verification fails.</shortdesc>
+  <!-- <indexterm> in the prolog feeds the generated index in back matter. -->
+  <prolog><metadata><keywords><indexterm>rollback</indexterm></keywords></metadata></prolog>
+  <taskbody>
+    <context>Roll back if the health check or smoke test fails and cannot be fixed within the
+      maintenance window.</context>
+    <steps>
+      <step><cmd>Stop the service: <codeph>sudo systemctl stop ccs</codeph>.</cmd></step>
+      <step><cmd>Restore the backup made before installation.</cmd>
+        <info><codeblock outputclass="language-bash">sudo /opt/ccs/bin/ccs-restore --in /var/backups/ccs-&lt;date&gt;.tar.gz</codeblock></info></step>
+      <step><cmd>Start the service and repeat the health check.</cmd></step>
+      <step><cmd>Record the rollback and its reason in the CM log.</cmd></step>
+    </steps>
+  </taskbody>
+</task>

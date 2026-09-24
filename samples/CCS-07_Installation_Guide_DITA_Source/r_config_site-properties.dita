@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<!--
+  REFERENCE using <properties>: DITA's purpose-built table for
+  name / value / meaning. Semantic markup means a stylesheet (or a
+  script) knows which column is the property name.
+  proptype  = the property name
+  propvalue = an example value
+  propdesc  = what it actually is (plain-language gloss)
+-->
+<reference id="r_config_site-properties">
+  <title>Site properties</title>
+  <shortdesc>All site-specific settings live in one file,
+    <filepath><keyword keyref="install-prefix"/>/conf/site.properties</filepath>.</shortdesc>
+  <refbody>
+    <properties relcolwidth="2* 1* 3*">
+      <prophead><proptypehd>Property</proptypehd><propvaluehd>Example</propvaluehd><propdeschd>What it actually is</propdeschd></prophead>
+      <property><proptype>ccs.site.id</proptype><propvalue>SITE-SD-02</propvalue><propdesc>The station's unique name on the network</propdesc></property>
+      <property><proptype>ccs.station.type</proptype><propvalue>land | ship | sub</propvalue><propdesc>Where the station lives; sets UI layout and defaults</propdesc></property>
+      <property><proptype>ccs.platforms.enabled</proptype><propvalue>mq4c,uuv</propvalue><propdesc>Which vehicle types this station may control</propdesc></property>
+      <property><proptype>ccs.datalink.mode</proptype><propvalue>sim</propvalue><propdesc>Simulated or live vehicle connection</propdesc></property>
+      <property><proptype>ccs.msg.gateway</proptype><propvalue>msg-gw.site.local:7443</propvalue><propdesc>Address of the external messaging gateway</propdesc></property>
+      <property><proptype>ccs.log.dir</proptype><propvalue>/var/log/ccs</propvalue><propdesc>Where logs are written; must be on marked storage</propdesc></property>
+      <property><proptype>ccs.ui.banner</proptype><propvalue>Per site baseline</propvalue><propdesc>Classification banner text shown on every screen</propdesc></property>
+    </properties>
+  </refbody>
+</reference>

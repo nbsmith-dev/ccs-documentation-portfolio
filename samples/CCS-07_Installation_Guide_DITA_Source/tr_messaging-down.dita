@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="tr_messaging-down">
+  <title>Health check shows messaging DOWN</title>
+  <troublebody>
+    <condition><p>Health check shows messaging DOWN.</p></condition>
+    <troubleSolution>
+      <cause><p>Wrong gateway address or blocked port.</p></cause>
+      <remedy>
+        <steps>
+          <step><cmd>Confirm ccs.msg.gateway matches the baseline.</cmd></step>
+          <step><cmd>Ask the network administrator to confirm port 7443 is open.</cmd></step>
+        </steps>
+      </remedy>
+    </troubleSolution>
+  </troublebody>
+</troubleshooting>

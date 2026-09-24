@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!--
+  KEY DEFINITIONS: one place for every value that changes per release
+  or per program. Topics say <keyword keyref="ccs-version"/>; the build
+  fills in the value. At a new release, edit THIS file, not 12 topics.
+  (All values illustrative.)
+-->
+<map>
+  <title>Key definitions</title>
+  <keydef keys="product-name"><topicmeta><keywords><keyword>Common Control System (CCS)</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ccs-version"><topicmeta><keywords><keyword>4.2.0</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ccs-build"><topicmeta><keywords><keyword>4.2.0-1187</keyword></keywords></topicmeta></keydef>
+  <keydef keys="install-prefix"><topicmeta><keywords><keyword>/opt/ccs</keyword></keywords></topicmeta></keydef>
+  <keydef keys="java-version"><topicmeta><keywords><keyword>OpenJDK 17</keyword></keywords></topicmeta></keydef>
+  <!-- A key can also point at a topic: links written as keyref="vdd"
+       resolve to whatever this entry points to in each build. -->
+  <keydef keys="vdd" href="r_install_references.dita" type="reference"/>
+</map>

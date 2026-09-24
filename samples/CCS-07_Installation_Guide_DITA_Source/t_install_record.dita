@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- TASK with a blank form inside <info>: the form is part of doing the task. -->
+<task id="t_install_record">
+  <title>Record the installation</title>
+  <shortdesc>An install is not complete until it is in the CM record.</shortdesc>
+  <taskbody>
+    <steps>
+      <step><cmd>Fill in the install record.</cmd>
+        <info>
+          <simpletable relcolwidth="2* 3*">
+            <sthead><stentry>Field</stentry><stentry>Entry</stentry></sthead>
+            <strow><stentry>Site ID</stentry><stentry/></strow>
+            <strow><stentry>Release and build installed</stentry><stentry/></strow>
+            <strow><stentry>Media control number</stentry><stentry/></strow>
+            <strow><stentry>Checksum, configuration, health, smoke test results</stentry><stentry/></strow>
+            <strow><stentry>Installed by (name, date)</stentry><stentry/></strow>
+            <strow><stentry>ISSO (name, date)</stentry><stentry/></strow>
+          </simpletable>
+        </info>
+      </step>
+      <step><cmd>File the record with the site configuration log.</cmd></step>
+    </steps>
+  </taskbody>
+</task>

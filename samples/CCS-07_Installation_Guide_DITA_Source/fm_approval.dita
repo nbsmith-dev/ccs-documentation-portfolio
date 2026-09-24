@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<!-- APPROVAL PAGE (front matter). Signature blocks as a simpletable. -->
+<topic id="fm_approval">
+  <title>Approval</title>
+  <body>
+    <p>Approved for release with CCS <keyword keyref="ccs-version"/> (illustrative).</p>
+    <simpletable relcolwidth="1* 2* 1*" outputclass="signatures">
+      <sthead><stentry>Role</stentry><stentry>Name and signature</stentry><stentry>Date</stentry></sthead>
+      <strow><stentry>Prepared by</stentry><stentry>Nathan B. Smith, Technical Writer</stentry><stentry/></strow>
+      <strow><stentry>Reviewed by</stentry><stentry>Technical SME (illustrative)</stentry><stentry/></strow>
+      <strow><stentry>Approved by</stentry><stentry>Program CM (illustrative)</stentry><stentry/></strow>
+    </simpletable>
+  </body>
+</topic>

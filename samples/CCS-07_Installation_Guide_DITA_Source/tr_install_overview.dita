@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- Appendix landing topic (concept): introduces the troubleshooting topics below it. -->
+<concept id="tr_install_overview">
+  <title>Troubleshooting</title>
+  <shortdesc>Each problem below has its own topic: what you see, why it happens, and how to fix it.</shortdesc>
+  <conbody><p>Find your symptom in the list; if none matches, contact site CM.</p></conbody>
+</concept>

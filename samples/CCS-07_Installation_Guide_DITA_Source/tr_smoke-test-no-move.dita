@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="tr_smoke-test-no-move">
+  <title>Smoke-test vehicle does not move</title>
+  <troublebody>
+    <condition><p>Smoke-test vehicle does not move.</p></condition>
+    <troubleSolution>
+      <cause><p>Plan not validated, or datalink not in sim mode.</p></cause>
+      <remedy>
+        <steps>
+          <step><cmd>Validate the plan.</cmd></step>
+          <step><cmd>Confirm ccs.datalink.mode=sim.</cmd></step>
+        </steps>
+      </remedy>
+    </troubleSolution>
+  </troublebody>
+</troubleshooting>

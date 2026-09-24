@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!--
+  TASK topic: the strict DITA task model enforces the ORDER of parts:
+    prereq -> context -> steps -> result -> postreq
+  and each <step> must start with one <cmd> (one action, imperative).
+  That structure IS the style guide: a writer cannot put two actions
+  in one step or bury a prerequisite after the steps.
+-->
+<task id="t_install_verify-media">
+  <title>Verify the release media</title>
+  <shortdesc>Prove the media is exactly what the VDD says before anything touches the station.</shortdesc>
+  <!-- <indexterm> in the prolog feeds the generated index in back matter. -->
+  <prolog><metadata><keywords><indexterm>checksum</indexterm><indexterm>media, verifying</indexterm></keywords></metadata></prolog>
+  <taskbody>
+    <prereq>You have the release disc and a copy of <xref keyref="vdd">the VDD</xref>.
+      The ISSO is present.</prereq>
+    <steps>
+      <step>
+        <!-- <cmd>: the one thing the reader does. <uicontrol>, <filepath>,
+             <codeph> tag WHAT each word is, so the stylesheet can style it
+             and a script can check it against the UI string table. -->
+        <cmd>Check the disc label against the VDD: release <keyword keyref="ccs-version"/>,
+          build number, date, and classification marking must all match.</cmd>
+      </step>
+      <step>
+        <cmd>Mount the disc read-only.</cmd>
+        <info><codeblock outputclass="language-bash">sudo mount -o ro /dev/sr0 /mnt/ccs-media</codeblock></info>
+      </step>
+      <step>
+        <!-- The DITA task model only allows a <note> or <hazardstatement>
+             BEFORE <cmd> in a step. The schema itself enforces the rule
+             "put the warning before the action it protects."
+             conref pulls the shared caution; no retyping. -->
+        <note conref="reuse/warnings.dita#warnings/c-checksum-fail"/>
+        <cmd>Verify the checksums against the list on the media.</cmd>
+        <info><codeblock outputclass="language-bash">cd /mnt/ccs-media
+sha256sum -c SHA256SUMS</codeblock></info>
+        <!-- <stepresult>: what the reader should SEE. -->
+        <stepresult>Every line ends in <codeph>OK</codeph>.</stepresult>
+      </step>
+      <step>
+        <cmd>Compare the <filepath>SHA256SUMS</filepath> file's own checksum with the value
+          printed in the VDD.</cmd>
+        <stepresult>Values match exactly.</stepresult>
+      </step>
+      <step><cmd>Record the media control number in the site media log.</cmd>
+        <info>The ISSO initials the entry.</info></step>
+    </steps>
+    <result>The media is verified and logged.</result>
+  </taskbody>
+</task>

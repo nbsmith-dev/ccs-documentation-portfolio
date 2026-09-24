@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!--
+  TASK with PLATFORM FILTERING inside a step. The smoke-test plan
+  differs for air and undersea vehicles. Both versions sit in the
+  source; the DITAVAL for each build keeps only the right one.
+  One topic, no forks.
+-->
+<task id="t_install_verify-installation">
+  <title>Verify the installation</title>
+  <shortdesc>Start the service, run the health check, and prove the station works in simulation.</shortdesc>
+  <!-- <indexterm> in the prolog feeds the generated index in back matter. -->
+  <prolog><metadata><keywords><indexterm>health check</indexterm><indexterm>smoke test</indexterm></keywords></metadata></prolog>
+  <taskbody>
+    <steps>
+      <step><cmd>Start the service.</cmd>
+        <info><codeblock outputclass="language-bash">sudo systemctl enable --now ccs</codeblock></info></step>
+      <step><cmd>Run the health check.</cmd>
+        <info><codeblock outputclass="language-bash">sudo /opt/ccs/bin/ccs-health</codeblock></info>
+        <stepresult>All components report <systemoutput>UP</systemoutput>.</stepresult></step>
+      <step><cmd>Log in at the station with a test operator account.</cmd>
+        <stepresult>The CCS window shows the classification banner and site ID.</stepresult></step>
+      <!-- Conditional steps: @platform values match the DITAVAL files. -->
+      <step platform="mq25 mq4c"><cmd>Open <filepath>SMOKE-AIR.plan</filepath>, select
+          <uicontrol>Validate</uicontrol>, then <uicontrol>Launch (Sim)</uicontrol>.</cmd>
+        <stepresult>The simulated aircraft follows the route for 5 minutes with no errors.</stepresult></step>
+      <step platform="uuv"><cmd>Open <filepath>SMOKE-UUV.plan</filepath>, select
+          <uicontrol>Validate</uicontrol>, then <uicontrol>Launch (Sim)</uicontrol>.</cmd>
+        <stepresult>The simulated UUV completes the dive profile with no errors.</stepresult></step>
+      <step importance="required"><cmd>With ISSO approval, set <codeph>ccs.datalink.mode=live</codeph>
+          and restart the service.</cmd>
+        <info>Do this only after every earlier step passes.</info></step>
+    </steps>
+  </taskbody>
+</task>

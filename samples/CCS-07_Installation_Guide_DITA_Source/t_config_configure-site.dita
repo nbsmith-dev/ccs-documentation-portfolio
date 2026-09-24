@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!--
+  TASK + <context> + conref'd caution + a link to the REFERENCE
+  topic instead of repeating the property table. The task says HOW;
+  the reference says WHAT each property means.
+-->
+<task id="t_config_configure-site">
+  <title>Configure the site</title>
+  <shortdesc>Set the site properties from the approved baseline and validate the file.</shortdesc>
+  <!-- <indexterm> in the prolog feeds the generated index in back matter. -->
+  <prolog><metadata><keywords><indexterm>site.properties</indexterm><indexterm>datalink mode</indexterm></keywords></metadata></prolog>
+  <taskbody>
+    <context>Copy values from the approved site baseline; do not invent them. See
+      <xref href="r_config_site-properties.dita"/> for what each property means.</context>
+    <steps>
+      <step>
+        <!-- Caution comes before the action (required by the task model). -->
+        <note conref="reuse/warnings.dita#warnings/c-datalink-mode"/>
+        <cmd>Open <filepath>/opt/ccs/conf/site.properties</filepath> with the site-approved editor.</cmd>
+      </step>
+      <step><cmd>Set each property to the baseline value.</cmd>
+        <info>A completed file looks like this:
+          <codeblock outputclass="language-properties"># site.properties (illustrative)
+ccs.site.id=SITE-SD-02
+ccs.station.type=land
+ccs.platforms.enabled=mq4c,uuv
+ccs.datalink.mode=sim
+ccs.msg.gateway=msg-gw.site.local:7443
+ccs.log.dir=/var/log/ccs
+ccs.ui.banner=&lt;per site baseline&gt;</codeblock></info>
+      </step>
+      <step><cmd>Validate the file.</cmd>
+        <info><codeblock outputclass="language-bash">sudo /opt/ccs/bin/ccs-config --check</codeblock></info>
+        <stepresult>Output ends with <systemoutput>Configuration valid (7 of 7 required properties set)</systemoutput>.</stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

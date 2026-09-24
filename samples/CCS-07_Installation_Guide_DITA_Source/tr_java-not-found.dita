@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="tr_java-not-found">
+  <title>Installer reports Java 17 not found</title>
+  <troublebody>
+    <condition><p>Installer reports Java 17 not found.</p></condition>
+    <troubleSolution>
+      <cause><p>Wrong or missing Java runtime.</p></cause>
+      <remedy>
+        <steps>
+          <step><cmd>Install the site-approved OpenJDK 17 package.</cmd></step>
+          <step><cmd>Run the installer again.</cmd></step>
+        </steps>
+      </remedy>
+    </troubleSolution>
+  </troublebody>
+</troubleshooting>

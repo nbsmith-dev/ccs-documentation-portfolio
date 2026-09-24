@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<!--
+  REUSE LIBRARY (warehouse topic). Never published on its own.
+  Every WARNING and CAUTION is written ONCE here, with an @id, and
+  pulled into tasks by content reference (conref). If safety wording
+  changes, it changes everywhere at the next build.
+  DITA note types: type="warning" = risk to people or mission;
+  type="caution" = risk to equipment or data.
+-->
+<topic id="warnings">
+  <title>Shared warnings and cautions</title>
+  <body>
+    <note id="w-sim-mode" type="warning">Install and verify with the datalink disconnected or in
+      simulation mode. A station that is half-configured can send invalid commands to a live
+      vehicle.</note>
+    <note id="c-datalink-mode" type="caution">Leave <codeph>ccs.datalink.mode=sim</codeph> until
+      the installation is verified. Changing it early connects the station to the live
+      datalink.</note>
+    <note id="c-checksum-fail" type="caution">If any checksum fails, stop. Do not install from
+      that media.</note>
+  </body>
+</topic>

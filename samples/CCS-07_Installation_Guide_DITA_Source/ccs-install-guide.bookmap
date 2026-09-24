@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
+<!--
+  ===================================================================
+  BOOKMAP: the "table of contents" for one deliverable.
+  DITA principle: the map decides WHAT goes in the book and in WHAT
+  ORDER. Topics never know which book they are in, so the same task
+  topics can also be pulled into the SUM (Section 4.1.3) or a How-To
+  Guide without copying a word.
+  PDF section            -> element below
+  Title, subtitle        -> <booktitle>
+  Disclaimer             -> <notices> (conref from reuse library)
+  Overview + glance      -> chapter 1 (concept + reference)
+  Before you begin       -> chapter 2 (reference)
+  Sections 1-5           -> chapter 3 (one task topic each)
+  Upgrade and rollback   -> chapter 4 (task)
+  Troubleshooting        -> appendix A (troubleshooting topics)
+  ===================================================================
+-->
+<bookmap id="ccs-install-guide">
+  <booktitle>
+    <mainbooktitle>CCS Site Installation and Configuration Guide</mainbooktitle>
+    <!-- The release number is a KEY reference, not typed text.
+         Change keydefs.ditamap once and every page updates. -->
+    <booktitlealt>Release <keyword keyref="ccs-version"/> (illustrative)</booktitlealt>
+  </booktitle>
+
+  <bookmeta>
+    <author>Nathan B. Smith</author>
+    <!-- @audience on the whole book: the admin DITAVAL keeps it,
+         operator builds of the shared topic pool drop it. -->
+    <prodinfo audience="admin">
+      <prodname><keyword keyref="product-name"/></prodname>
+      <vrmlist><vrm version="4" release="2" modification="0"/></vrmlist>
+    </prodinfo>
+    <!-- FORMAL DELIVERABLE METADATA (must follow <prodinfo> per the DTD). <bookid> carries the document
+         number and edition that print on the title page and in every
+         running header. <bookchangehistory> records review and approval. -->
+    <bookid>
+      <!-- Order is fixed by the bookmap DTD: edition before booknumber. -->
+      <edition>Revision A</edition>
+      <booknumber>CCS-ICG-420 (illustrative)</booknumber>
+    </bookid>
+    <bookchangehistory>
+      <reviewed><person>Technical SME (illustrative)</person></reviewed>
+      <approved><person>Program CM (illustrative)</person></approved>
+    </bookchangehistory>
+  </bookmeta>
+
+  <frontmatter>
+    <!-- Key definitions live in their own map so every deliverable
+         (SUM, How-To Guides, this guide) shares one set of values.
+         Bookmap only allows a mapref inside front/back matter or a
+         chapter, so it sits here; keys are still global to the book. -->
+    <mapref href="keydefs.ditamap" format="ditamap"/>
+    <notices href="reuse/notices.dita"/>
+    <!-- Approval page: an ordinary topic placed in front matter. -->
+    <topicref href="fm_approval.dita"/>
+    <!-- Record of changes. Bookmap's <amendments> element is only
+         allowed in back matter, but DoD deliverables put the record of
+         changes up front, so it is a plain topicref here. -->
+    <topicref href="fm_record-of-changes.dita"/>
+    <!-- Generated lists. No topic files: the build assembles them from
+         topic titles, <fig> titles, and table titles. -->
+    <booklists>
+      <toc/>
+      <figurelist/>
+      <tablelist/>
+    </booklists>
+    <!-- <preface>: purpose, scope, audience, conventions. -->
+    <preface href="fm_preface.dita"/>
+  </frontmatter>
+
+  <chapter href="c_install_overview.dita">
+    <topicref href="r_install_references.dita"/>
+  </chapter>
+
+  <chapter href="r_install_prerequisites.dita"/>
+
+  <!-- Chapter 3 is a plain heading that groups the five task topics.
+       Order here IS the procedure order; the tasks carry no numbers. -->
+  <chapter navtitle="Install and configure">
+    <topicref href="t_install_verify-media.dita"/>
+    <topicref href="t_install_install-software.dita"/>
+    <topicref href="t_config_configure-site.dita">
+      <!-- The property reference nests under the task that uses it. -->
+      <topicref href="r_config_site-properties.dita"/>
+    </topicref>
+    <topicref href="t_install_verify-installation.dita"/>
+    <topicref href="t_install_record.dita"/>
+  </chapter>
+
+  <chapter href="t_install_rollback.dita"/>
+
+  <!-- Appendices sit directly in the bookmap, after the chapters.
+       (DITA-OT strict mode rejected them inside <backmatter>.) -->
+  <appendices>
+      <appendix href="tr_install_overview.dita">
+        <!-- One troubleshooting topic per symptom: DITA 1.3 pattern
+             condition -> cause -> remedy. -->
+        <topicref href="tr_checksum-failed.dita"/>
+        <topicref href="tr_java-not-found.dita"/>
+        <topicref href="tr_config-check-fails.dita"/>
+        <topicref href="tr_messaging-down.dita"/>
+        <topicref href="tr_no-banner.dita"/>
+        <topicref href="tr_smoke-test-no-move.dita"/>
+      </appendix>
+  </appendices>
+
+  <!-- BACK MATTER. The glossary is built from <glossentry> topics (one
+       term per file, reusable across every CCS deliverable); the index
+       is generated from <indexterm> elements inside the topics. -->
+  <backmatter>
+    <booklists>
+      <glossarylist href="bm_glossary.dita">
+        <topicref href="glossary/g_ccs.dita"/>
+        <topicref href="glossary/g_cm.dita"/>
+        <topicref href="glossary/g_cui.dita"/>
+        <topicref href="glossary/g_isso.dita"/>
+        <topicref href="glossary/g_stig.dita"/>
+        <topicref href="glossary/g_vdd.dita"/>
+      </glossarylist>
+      <indexlist/>
+    </booklists>
+  </backmatter>
+</bookmap>

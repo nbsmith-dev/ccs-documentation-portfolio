@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<!--
+  TROUBLESHOOTING topic (DITA 1.3): the structure forces the three
+  questions a stressed reader asks, in order:
+    <condition>  what am I seeing?
+    <cause>      why?
+    <remedy>     what do I do? (real <steps>, so it reads like a task)
+  One symptom per topic, so search and links land on the exact fix.
+-->
+<troubleshooting id="tr_checksum-failed">
+  <title>Checksum reports FAILED</title>
+  <troublebody>
+    <condition><p>Checksum reports FAILED.</p></condition>
+    <troubleSolution>
+      <cause><p>Damaged or wrong media.</p></cause>
+      <remedy>
+        <steps>
+          <step><cmd>Stop. Do not install.</cmd></step>
+          <step><cmd>Report to site CM for replacement media.</cmd></step>
+        </steps>
+      </remedy>
+    </troubleSolution>
+  </troublebody>
+</troubleshooting>

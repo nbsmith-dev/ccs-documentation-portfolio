@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<!-- Front-matter notices. Pulled into every sample deliverable. -->
+<topic id="notices">
+  <title>Notices</title>
+  <body>
+    <p id="disclaimer">No CUI, classified, proprietary, or export-controlled information is
+      contained in this document. Provided as a technical writing sample — Nathan B. Smith.</p>
+    <p id="illustrative">Every path, version number, command, and setting in this guide is
+      illustrative, not the actual CCS product.</p>
+  </body>
+</topic>

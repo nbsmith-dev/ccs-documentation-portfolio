@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="g_vdd">
+  <glossterm>Version Description Document</glossterm>
+  <glossdef>The document that lists what is in a release: files, versions, checksums, known issues.</glossdef>
+  <glossBody>
+    <glossSurfaceForm>Version Description Document (VDD)</glossSurfaceForm>
+    <glossAlt><glossAcronym>VDD</glossAcronym></glossAlt>
+  </glossBody>
+</glossentry>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="tr_config-check-fails">
+  <title>Configuration check names a property</title>
+  <troublebody>
+    <condition><p>Configuration check names a property.</p></condition>
+    <troubleSolution>
+      <cause><p>Missing or misspelled value.</p></cause>
+      <remedy>
+        <steps>
+          <step><cmd>Correct the property from the site baseline.</cmd></step>
+          <step><cmd>Run ccs-config --check again.</cmd></step>
+        </steps>
+      </remedy>
+    </troubleSolution>
+  </troublebody>
+</troubleshooting>

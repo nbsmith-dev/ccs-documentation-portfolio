@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- TASK: same model. Note there are NO step numbers in the source;
+     the output numbers them, so inserting a step never breaks numbering. -->
+<task id="t_install_install-software">
+  <title>Install the software</title>
+  <shortdesc>Run the installer from verified media and confirm the service is registered.</shortdesc>
+  <taskbody>
+    <prereq>The media passed <xref href="t_install_verify-media.dita"/>.</prereq>
+    <steps>
+      <step><cmd>Back up the current installation, if one exists.</cmd>
+        <info><codeblock outputclass="language-bash">sudo /opt/ccs/bin/ccs-backup --out /var/backups/ccs-$(date +%F).tar.gz</codeblock></info>
+      </step>
+      <step><cmd>Run the installer from the media.</cmd>
+        <info><codeblock outputclass="language-bash">cd /mnt/ccs-media
+sudo ./install.sh --release 4.2.0 --prefix /opt/ccs</codeblock></info>
+        <stepresult>The installer prints <systemoutput>Install complete: CCS <keyword keyref="ccs-build"/></systemoutput>.</stepresult>
+      </step>
+      <step><cmd>Confirm the service is registered but not running.</cmd>
+        <info><codeblock outputclass="language-bash">systemctl status ccs</codeblock></info>
+        <stepresult>Status shows <systemoutput>loaded</systemoutput>, <systemoutput>inactive (dead)</systemoutput>.</stepresult>
+      </step>
+      <step><cmd>Unmount and remove the media; return it to storage and log the return.</cmd></step>
+    </steps>
+    <!-- postreq: what comes next, as a link, not a copied paragraph. -->
+    <postreq>Go to <xref href="t_config_configure-site.dita"/>.</postreq>
+  </taskbody>
+</task>

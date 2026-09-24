@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<!-- GLOSSENTRY: one term per file. <glossSurfaceForm> is the first-use
+     form "Full Name (ABBR)"; <glossAcronym> is the short form. Topics can
+     write <abbreviated-form keyref="..."/> and the build prints the long
+     form on first use, the acronym after. -->
+<glossentry id="g_ccs">
+  <glossterm>Common Control System</glossterm>
+  <glossdef>One common software suite that plans, controls, and manages multiple Navy unmanned vehicles.</glossdef>
+  <glossBody>
+    <glossSurfaceForm>Common Control System (CCS)</glossSurfaceForm>
+    <glossAlt><glossAcronym>CCS</glossAcronym></glossAlt>
+  </glossBody>
+</glossentry>
